@@ -1,0 +1,32 @@
+﻿@model List<AkademiPlusApi.ConsumeLayer.Models.BalanceViewModels.BalanceListViewModel>
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Hesap No</th>
+            <th>Bakiye</th>
+            <th>Döviz</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BalanceID</td>
+                <td>@item.AccountNumber</td>
+                <td>@item.CustomerBalance</td>
+                <td>@item.Currency</td>
+                <td><a href="/Balance/DeleteBalance/@item.BalanceID" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Balance/UpdateBalance/@item.BalanceID" class="btn btn-outline-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Balance/AddBalance/" class="btn btn-outline-primary">Yeni Bakiye Girişi</a>
+</div>

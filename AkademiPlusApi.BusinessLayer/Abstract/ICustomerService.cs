@@ -9,5 +9,6 @@ namespace AkademiPlusApi.BusinessLayer.Abstract
 {
     public interface ICustomerService : IGenericService<Customer>
     {
+        int TGetCustomerCounts();
     }
 }

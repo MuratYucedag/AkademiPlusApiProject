@@ -1,0 +1,22 @@
+﻿@model AkademiPlusApi.ConsumeLayer.Models.BalanceViewModels.BalanceAddViewModel
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>Müşteri Hesap Numarası</label>
+        <input type="text" class="form-control" asp-for="AccountNumber" />
+        <br />
+        <label>Hesap Başlangıç Bakiyesi</label>
+        <input type="text" class="form-control" asp-for="CustomerBalance" />
+        <br />
+        <label>Hesap Döviz Türü</label>
+        <input type="text" class="form-control" asp-for="Currency" />
+        <br />
+        <button class="btn btn-primary">Hesap Ekle</button>
+    </form>
+</div>

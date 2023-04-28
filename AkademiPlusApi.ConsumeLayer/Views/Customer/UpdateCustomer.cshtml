@@ -1,0 +1,30 @@
+﻿@model AkademiPlusApi.ConsumeLayer.Models.CustomerViewModels.CustomerUpdateViewModel
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <input type="hidden" asp-for="CustomerID" />
+        <label>Müşteri Adı</label>
+        <input type="text" class="form-control" asp-for="CustomerName" />
+        <br />
+        <label>Müşteri Soyadı</label>
+        <input type="text" class="form-control" asp-for="CustomerSurname" />
+        <br />
+        <label>Müşteri İlçesi</label>
+        <input type="text" class="form-control" asp-for="CustomerDistrict" />
+        <br />
+        <label>Müşteri İli</label>
+        <input type="text" class="form-control" asp-for="CustomerCity" />
+        <br />
+        <label>Müşteri Hesap Numarası</label>
+        <input type="text" class="form-control" asp-for="AccountNumber" />
+        <br />
+        <button class="btn btn-warning">Müşteriyi Güncelle</button>
+    </form>
+</div>

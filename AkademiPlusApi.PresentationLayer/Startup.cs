@@ -42,6 +42,16 @@ namespace AkademiPlusApi.PresentationLayer
             services.AddScoped<IActivityService, ActivityManager>();
 
             services.AddControllers();
+
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("AkademiPlusCors", opts =>
+                 {
+                     opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                 });
+            });
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AkademiPlusApi.PresentationLayer", Version = "v1" });
@@ -59,7 +69,7 @@ namespace AkademiPlusApi.PresentationLayer
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors("AkademiPlusCors");
             app.UseRouting();
 
             app.UseAuthorization();
